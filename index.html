@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Pembelajaran Bahasa Arab - MA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1e40af;
+            --secondary-blue: #3b82f6;
+            --light-blue: #dbeafe;
+            --accent-gold: #fbbf24;
+            --dark-gold: #d97706;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --light-bg: #f8fafc;
+            --dark-bg: #0f172a;
+            --dark-card: #1e293b;
+            --dark-text: #e2e8f0;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 25px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+            transition: var(--transition);
+        }
+
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navbar */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .dark-mode header {
+            background-color: var(--dark-card);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            color: var(--primary-blue);
+            font-size: 28px;
+        }
+
+        .dark-mode .logo-icon {
+            color: var(--accent-gold);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .dark-mode .logo-text {
+            color: var(--accent-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .dark-mode .nav-links a {
+            color: var(--dark-text);
+        }
+
+        .nav-links a:hover {
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+        }
+
+        .dark-mode .nav-links a:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-input {
+            padding: 10px 15px;
+            padding-left: 40px;
+            border: 2px solid var(--light-blue);
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            width: 200px;
+            transition: var(--transition);
+        }
+
+        .dark-mode .search-input {
+            background-color: var(--dark-card);
+            border-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            width: 220px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
+
+        .dark-mode-toggle {
+            background-color: var(--light-blue);
+            border: none;
+            width: 50px;
+            height: 26px;
+            border-radius: 50px;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .dark-mode .dark-mode-toggle {
+            background-color: var(--dark-card);
+        }
+
+        .toggle-circle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--primary-blue);
+            left: 3px;
+            transition: var(--transition);
+        }
+
+        .dark-mode .toggle-circle {
+            left: 27px;
+            background-color: var(--accent-gold);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #dbeafe 0%, #f8fafc 100%);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            margin-bottom: 50px;
+        }
+
+        .dark-mode .hero {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-card) 100%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .dark-mode .hero h1 {
+            color: var(--accent-gold);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .dark-mode .hero p {
+            color: #cbd5e1;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Materi Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .dark-mode .section-title h2 {
+            color: var(--accent-gold);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .dark-mode .section-title p {
+            color: #cbd5e1;
+        }
+
+        .materi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .materi-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .dark-mode .materi-card {
+            background-color: var(--dark-card);
+        }
+
+        .materi-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: var(--light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .dark-mode .card-icon {
+            background-color: rgba(30, 64, 175, 0.3);
+        }
+
+        .card-icon i {
+            font-size: 30px;
+            color: var(--primary-blue);
+        }
+
+        .dark-mode .card-icon i {
+            color: var(--accent-gold);
+        }
+
+        .materi-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+
+        .dark-mode .materi-card h3 {
+            color: var(--accent-gold);
+        }
+
+        .materi-card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .dark-mode .materi-card p {
+            color: #cbd5e1;
+        }
+
+        .card-button {
+            display: inline-block;
+            text-align: center;
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .dark-mode .card-button {
+            background-color: rgba(30, 64, 175, 0.3);
+            color: var(--accent-gold);
+        }
+
+        .card-button:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .dark-mode .card-button:hover {
+            background-color: var(--accent-gold);
+            color: var(--dark-bg);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 80px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            border-radius: 15px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .dark-mode .faq-item {
+            background-color: var(--dark-card);
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+        }
+
+        .dark-mode .faq-question {
+            color: var(--accent-gold);
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+            color: var(--text-light);
+        }
+
+        .dark-mode .faq-answer {
+            color: #cbd5e1;
+        }
+
+        .faq-answer.active {
+            padding: 0 25px 25px;
+            max-height: 500px;
+        }
+
+        /* Download Section */
+        .download-section {
+            background-color: var(--light-blue);
+            padding: 60px 0;
+            border-radius: var(--border-radius);
+            margin-bottom: 80px;
+        }
+
+        .dark-mode .download-section {
+            background-color: rgba(30, 64, 175, 0.2);
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .download-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .dark-mode .download-card {
+            background-color: var(--dark-card);
+        }
+
+        .download-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .download-icon {
+            font-size: 40px;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .dark-mode .download-icon {
+            color: var(--accent-gold);
+        }
+
+        .download-card h4 {
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+
+        .dark-mode .download-card h4 {
+            color: var(--accent-gold);
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: var(--transition);
+        }
+
+        .download-btn:hover {
+            background-color: var(--secondary-blue);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 60px 0 30px;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .dark-mode footer {
+            background-color: var(--dark-card);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+
+        .footer-column p, .footer-column li {
+            margin-bottom: 10px;
+            color: #e2e8f0;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li i {
+            margin-right: 10px;
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .publisher {
+            font-style: italic;
+            margin-top: 10px;
+            color: var(--accent-gold);
+        }
+
+        /* Modal untuk materi */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 900px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .dark-mode .modal-content {
+            background-color: var(--dark-card);
+            color: var(--dark-text);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 30px;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--primary-blue);
+        }
+
+        .modal-header {
+            margin-bottom: 30px;
+        }
+
+        .modal-header h2 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+        }
+
+        .dark-mode .modal-header h2 {
+            color: var(--accent-gold);
+        }
+
+        .modal-body {
+            line-height: 1.8;
+        }
+
+        .modal-section {
+            margin-bottom: 30px;
+        }
+
+        .modal-section h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 8px;
+        }
+
+        .dark-mode .modal-section h3 {
+            color: var(--accent-gold);
+            border-bottom-color: rgba(251, 191, 36, 0.3);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-blue);
+        }
+
+        .dark-mode th, .dark-mode td {
+            border-bottom: 1px solid rgba(251, 191, 36, 0.1);
+        }
+
+        th {
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .dark-mode th {
+            background-color: rgba(30, 64, 175, 0.3);
+            color: var(--accent-gold);
+        }
+
+        tr:hover {
+            background-color: rgba(219, 234, 254, 0.3);
+        }
+
+        .dark-mode tr:hover {
+            background-color: rgba(30, 64, 175, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .materi-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            .dark-mode .nav-links {
+                background-color: var(--dark-card);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 15px;
+                border-radius: 0;
+                border-bottom: 1px solid var(--light-blue);
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .search-input {
+                width: 150px;
+            }
+
+            .search-input:focus {
+                width: 170px;
+            }
+
+            .materi-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header / Navbar -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="logo-text">BahasaArab.MA</div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#materi">Materi</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#download">Download</a></li>
+                </ul>
+                
+                <div class="header-controls">
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class="search-input" id="searchInput" placeholder="Cari materi...">
+                    </div>
+                    <button class="dark-mode-toggle" id="darkModeToggle">
+                        <span class="toggle-circle"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Materi Pembelajaran Bahasa Arab MA</h1>
+            <p>Platform pembelajaran bahasa Arab jenjang Madrasah Aliyah yang lengkap dan modern. Pelajari Nahwu, Sharaf, Mufradat, dan materi lainnya dengan metode yang mudah dipahami.</p>
+            <a href="#materi" class="cta-button">Mulai Belajar</a>
+        </div>
+    </section>
+
+    <!-- Materi Section -->
+    <section class="materi-section" id="materi">
+        <div class="container">
+            <div class="section-title">
+                <h2>Materi Pembelajaran</h2>
+                <p>Pilih materi yang ingin Anda pelajari. Setiap materi disajikan dengan contoh dan penjelasan yang mudah dipahami.</p>
+            </div>
+            
+            <div class="materi-grid" id="materiGrid">
+                <!-- Materi card akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pertanyaan Umum</h2>
+                <p>Temukan jawaban untuk pertanyaan yang sering diajukan tentang pembelajaran bahasa Arab.</p>
+            </div>
+            
+            <div class="faq-container" id="faqContainer">
+                <!-- FAQ akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download-section" id="download">
+        <div class="container">
+            <div class="section-title">
+                <h2>Download Materi</h2>
+                <p>Unduh materi pembelajaran dalam format PDF untuk belajar offline.</p>
+            </div>
+            
+            <div class="download-grid">
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h4>Ringkasan Nahwu</h4>
+                    <p>PDF 25 halaman</p>
+                    <a href="#" class="download-btn">Download</a>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h4>Kamus Mufradat</h4>
+                    <p>PDF 40 halaman</p>
+                    <a href="#" class="download-btn">Download</a>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h4>Latihan Soal</h4>
+                    <p>PDF 15 halaman</p>
+                    <a href="#" class="download-btn">Download</a>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h4>Panduan Sharaf</h4>
+                    <p>PDF 30 halaman</p>
+                    <a href="#" class="download-btn">Download</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Kontak Madrasah</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Pendidikan No. 123, Kota Pendidikan</p>
+                    <p><i class="fas fa-phone"></i> (021) 1234-5678</p>
+                    <p><i class="fas fa-envelope"></i> info@madrasah-aliah.sch.id</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Materi Utama</h3>
+                    <ul>
+                        <li><i class="fas fa-book"></i> Nahwu</li>
+                        <li><i class="fas fa-book"></i> Sharaf</li>
+                        <li><i class="fas fa-book"></i> Mufradat</li>
+                        <li><i class="fas fa-book"></i> Qiro'ah</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Tautan Cepat</h3>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#home">Beranda</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#materi">Materi</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#faq">FAQ</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#download">Download</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Madrasah Aliyah. All rights reserved.</p>
+                <p class="publisher">Aplikasi ini dipublikasikan oleh Ahmad Muafi Fachrurozi, M.Pd.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal untuk Materi Detail -->
+    <div class="modal" id="materiModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle">Judul Materi</h2>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Konten materi akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data materi
+        const materiData = [
+            {
+                id: 1,
+                title: "Nahwu",
+                icon: "fas fa-language",
+                description: "Ilmu tentang kaidah-kaidah struktur kalimat bahasa Arab.",
+                content: `
+                    <div class="modal-section">
+                        <h3>Definisi Nahwu</h3>
+                        <p>Nahwu adalah ilmu yang mempelajari kaidah-kaidah untuk mengetahui keadaan akhir kata dalam bahasa Arab (i'rab) dan susunan kalimat.</p>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3>Contoh Jumlah Ismiyah (Kalimat Nominal)</h3>
+                        <p><strong>الطالبُ مجتهدٌ</strong> (Ath-thalibu mujtahidun) - "Siswa itu rajin"</p>
+                        <ul>
+                            <li><strong>الطالبُ</strong> (Ath-thalibu): Mubtada' (subjek), marfu' dengan tanda dhammah</li>
+                            <li><strong>مجتهدٌ</strong> (Mujtahidun): Khabar (predikat), marfu' dengan tanda dhammah</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3>Contoh Jumlah Fi'liyah (Kalimat Verbal)</h3>
+                        <p><strong>يذهبُ الطالبُ إلى المدرسةِ</strong> (Yadhhabu ath-thalibu ila al-madrasati) - "Siswa pergi ke sekolah"</p>
+                        <ul>
+                            <li><strong>يذهبُ</strong> (Yadhhabu): Fi'il mudhari' (kata kerja sekarang), marfu' dengan tanda dhammah</li>
+                            <li><strong>الطالبُ</strong> (Ath-thalibu): Fa'il (pelaku), marfu' dengan tanda dhammah</li>
+                            <li><strong>إلى المدرسةِ</strong> (Ila al-madrasati): Jar majrur (kata keterangan tempat)</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                id: 2,
+                title: "Sharaf",
+                icon: "fas fa-exchange-alt",
+                description: "Ilmu tentang perubahan bentuk kata (khususnya kata kerja) dalam bahasa Arab.",
+                content: `
+                    <div class="modal-section">
+                        <h3>Definisi Sharaf</h3>
+                        <p>Sharaf adalah ilmu yang mempelajari perubahan bentuk kata (tasrif) terutama kata kerja (fi'il) dari satu bentuk ke bentuk lainnya.</p>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3>Wazan (Pola Kata)</h3>
+                        <p>Setiap kata kerja dalam bahasa Arab memiliki pola (wazan) tertentu. Contoh wazan fi'il madhi (kata kerja lampau):</p>
+                        <ul>
+                            <li><strong>فَعَلَ</strong> (Fa'ala) - Pola dasar</li>
+                            <li><strong>فَعَّلَ</strong> (Fa''ala) - Bentuk intensif</li>
+                            <li><strong>أَفْعَلَ</strong> (Af'ala) - Bentuk kausatif</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3>Contoh Tashrif Fi'il (Konjugasi Kata Kerja)</h3>
+                        <p>Tashrif fi'il <strong>كَتَبَ</strong> (kataba - menulis) dalam bentuk mudhari':</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Orang</th>
+                                    <th>Tunggal</th>
+                                    <th>Dual</th>
+                                    <th>Jamak</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ketiga (Laki-laki)</td>
+                                    <td>يَكْتُبُ (yaktubu)</td>
+                                    <td>يَكْتُبَانِ (yaktubani)</td>
+                                    <td>يَكْتُبُونَ (yaktubuna)</td>
+                                </tr>
+                                <tr>
+                                    <td>Kedua (Laki-laki)</td>
+                                    <td>تَكْتُبُ (taktubu)</td>
+                                    <td>تَكْتُبَانِ (taktubani)</td>
+                                    <td>تَكْتُبُونَ (taktubuna)</td>
+                                </tr>
+                                <tr>
+                                    <td>Pertama</td>
+                                    <td>أَكْتُبُ (aktubu)</td>
+                                    <td>نَكْتُبُ (naktubu)</td>
+                                    <td>نَكْتُبُ (naktubu)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `
+            },
+            {
+                id: 3,
+                title: "Mufradat",
+                icon: "fas fa-book",
+                description: "Kumpulan kosakata bahasa Arab dengan tema-tema tertentu.",
+                content: `
+                    <div class="modal-section">
+                        <h3>Definisi Mufradat</h3>
+                        <p>Mufradat adalah kosa kata atau perbendaharaan kata dalam bahasa Arab. Penguasaan mufradat yang luas sangat penting untuk memahami dan berkomunikasi dalam bahasa Arab.</p>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3>Kosakata Tema Sekolah</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Bahasa Arab</th>
+                                    <th>Latin</th>
+                                    <th>Arti Indonesia</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>مَدْرَسَة</td>
+                                    <td>Madrasah</td>
+                                    <td>Sekolah</td>
+                                </tr>
+                                <tr>
+                                    <td>كِتَاب</td>
+                                    <td>Kitab</td>
+                                    <td>Buku</td>
+                                </tr>
+                                <tr>
+                                    <td>قَلَم</td>
+                                    <td>Qalam</td>
+                                    <td>Pena</td>
+                                </tr>
+                                <tr>
+                                    <td>مُعَلِّم</td>
+                                    <td>Mu'allim</td>
+                                    <td>Guru (laki-laki)</td>
+                                </tr>
+                                <tr>
+                                    <td>طَالِب</td>
+                                    <td>Thalib</td>
+                                    <td>Siswa</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3>Kosakata Tema Keluarga</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Bahasa Arab</th>
+                                    <th>Latin</th>
+                                    <th>Arti Indonesia</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>أَب</td>
+                                    <td>Ab</td>
+                                    <td>Ayah</td>
+                                </tr>
+                                <tr>
+                                    <td>أُم</td>
+                                    <td>Umm</td>
+                                    <td>Ibu</td>
+                                </tr>
+                                <tr>
+                                    <td>أَخ</td>
+                                    <td>Akh</td>
+                                    <td>Saudara laki-laki</td>
+                                </tr>
+                                <tr>
+                                    <td>بِنْت</td>
+                                    <td>Bint</td>
+                                    <td>Anak perempuan</td>
+                                </tr>
+                                <tr>
+                                    <td>جَدّ</td>
+                                    <td>Jadd</td>
+                                    <td>Kakek</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `
+            },
+            {
+                id: 4,
+                title: "Qawaid",
+                icon: "fas fa-gavel",
+                description: "Aturan-aturan dasar bahasa Arab seperti mudzakkar-muannats, mufrad-jamak.",
+                content: `
+                    <div class="modal-section">
+                        <h3>Definisi Qawaid</h3>
+                        <p>Qawaid adalah aturan-aturan dasar dalam bahasa Arab yang mencakup berbagai aspek tata bahasa seperti jenis kelamin kata (mudzakkar-muannats) dan bilangan (mufrad-tatsniyah-jamak).</p>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3>Hukum Mudzakkar (Maskulin) dan Muannats (Feminin)</h3>
+                        <p>Dalam bahasa Arab, setiap kata benda memiliki gender (jenis kelamin).</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Contoh</th>
+                                    <th>Jenis</th>
+                                    <th>Keterangan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>مُعَلِّم (Mu'allim)</td>
+                                    <td>Mudzakkar</td>
+                                    <td>Guru laki-laki</td>
+                                </tr>
+                                <tr>
+                                    <td>مُعَلِّمَة (Mu'allimah)</td>
+                                    <td>Muannats</td>
+                                    <td>Guru perempuan (ditandai dengan ta marbuthah ة)</td>
+                                </tr>
+                                <tr>
+                                    <td>طَالِب (Thalib)</td>
+                                    <td>Mudzakkar</td>
+                                    <td>Siswa laki-laki</td>
+                                </tr>
+                                <tr>
+                                    <td>طَالِبَة (Thalibah)</td>
+                                    <td>Muannats</td>
+                                    <td>Siswa perempuan</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3>Hukum Mufrad (Tunggal), Tasniyah (Dual), dan Jamak (Plural)</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Bentuk</th>
+                                    <th>Contoh</th>
+                                    <th>Arti</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Mufrad (Tunggal)</td>
+                                    <td>كِتَابٌ (Kitabun)</td>
+                                    <td>Sebuah buku</td>
+                                </tr>
+                                <tr>
+                                    <td>Tasniyah (Dual)</td>
+                                    <td>كِتَابَانِ (Kitabani)</td>
+                                    <td>Dua buku</td>
+                                </tr>
+                                <tr>
+                                    <td>Jamak (Plural)</td>
+                                    <td>كُتُبٌ (Kutubun)</td>
+                                    <td>Buku-buku (jamak tak beraturan)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `
+            },
+            {
+                id: 5,
+                title: "Hiwar",
+                icon: "fas fa-comments",
+                description: "Percakapan bahasa Arab dengan tema sehari-hari.",
+                content: `
+                    <div class="modal-section">
+                        <h3>Definisi Hiwar</h3>
+                        <p>Hiwar adalah percakapan atau dialog dalam bahasa Arab. Mempelajari hiwar membantu mengembangkan kemampuan komunikasi sehari-hari.</p>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3>Contoh Dialog Pendek: Perkenalan Diri</h3>
+                        <p><strong>أَحْمَد:</strong> السَّلَامُ عَلَيْكُمْ. مَا اسْمُكَ؟</p>
+                        <p><strong>Ahmad:</strong> Assalamu'alaikum. Ma ismuka? (Assalamu'alaikum. Siapa namamu?)</p>
+                        
+                        <p><strong>خَالِد:</strong> وَعَلَيْكُمُ السَّلَامُ. اِسْمِي خَالِدٌ. وَمَا اسْمُكَ؟</p>
+                        <p><strong>Khalid:</strong> Wa'alaikumussalam. Ismi Khalidun. Wa ma ismuka? (Wa'alaikumussalam. Namaku Khalid. Dan siapa namamu?)</p>
+                        
+                        <p><strong>أَحْمَد:</strong> اِسْمِي أَحْمَدٌ. مِنْ أَيْنَ أَنْتَ؟</p>
+                        <p><strong>Ahmad:</strong> Ismi Ahmadun. Min aina anta? (Namaku Ahmad. Dari mana kamu?)</p>
+                        
+                        <p><strong>خَالِد:</strong> أَنَا مِنْ بَانْدُوْڠَ. وَأَنْتَ؟</p>
+                        <p><strong>Khalid:</strong> Ana min Bandung. Wa anta? (Saya dari Bandung. Dan kamu?)</p>
+                        
+                        <p><strong>أَحْمَد:</strong> أَنَا مِنْ جَاكَرْتَا. تَشَرَّفْنَا.</p>
+                        <p><strong>Ahmad:</strong> Ana min Jakarta. Tasyarrofna. (Saya dari Jakarta. Senang berkenalan denganmu.)</p>
+                    </div>
+                `
+            },
+            {
+                id: 6,
+                title: "Qiro'ah",
+                icon: "fas fa-book-reader",
+                description: "Teks bacaan bahasa Arab dengan terjemahan dan penjelasan.",
+                content: `
+                    <div class="modal-section">
+                        <h3>Definisi Qiro'ah</h3>
+                        <p>Qiro'ah adalah kegiatan membaca dan memahami teks bahasa Arab. Mempelajari qiro'ah meningkatkan kemampuan membaca dan memahami teks Arab.</p>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3>Teks Pendek: المدرسة (Sekolah)</h3>
+                        <p><strong>النَّص:</strong></p>
+                        <p style="direction: rtl; text-align: right; font-size: 1.2rem; line-height: 1.8;">
+                            الْمَدْرَسَةُ بَيْتِي الثَّانِي. أَذْهَبُ إِلَى الْمَدْرَسَةِ كُلَّ يَوْمٍ. فِي الْمَدْرَسَةِ أَتَعَلَّمُ الْعُلُومَ وَالدُّرُوسَ الْمُخْتَلِفَةَ. أَحِبُّ مُعَلِّمِي لِأَنَّهُمْ يُعَلِّمُونَنَا بِصَبْرٍ. أَصْدِقَائِي فِي الْمَدْرَسَةِ أَخْوَاتِي وَإِخْوَتِي. نَدْرُسُ مَعًا وَنَلْعَبُ مَعًا. الْمَدْرَسَةُ مَكَانٌ جَمِيلٌ لِلتَّعَلُّمِ وَالصَّدَاقَةِ.
+                        </p>
+                        
+                        <h4>Terjemahan:</h4>
+                        <p>Sekolah adalah rumah keduaku. Aku pergi ke sekolah setiap hari. Di sekolah aku belajar ilmu dan pelajaran yang berbeda-beda. Aku mencintai guruku karena mereka mengajarkan kami dengan sabar. Teman-temanku di sekolah adalah saudara-saudariku. Kami belajar bersama dan bermain bersama. Sekolah adalah tempat yang indah untuk belajar dan persahabatan.</p>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3>Kosakata Penting:</h3>
+                        <ul>
+                            <li><strong>بَيْت</strong> (Bait): Rumah</li>
+                            <li><strong>يَوْم</strong> (Yaum): Hari</li>
+                            <li><strong>يَتَعَلَّم</strong> (Yata'allam): Belajar</li>
+                            <li><strong>عُلُوم</strong> ('Ulum): Ilmu-ilmu</li>
+                            <li><strong>دُرُوس</strong> (Durus): Pelajaran-pelajaran</li>
+                            <li><strong>صَبْر</strong> (Sabr): Sabar</li>
+                            <li><strong>أَصْدِقَاء</strong> (Asdiqa'): Teman-teman</li>
+                        </ul>
+                    </div>
+                `
+            }
+        ];
+
+        // Data FAQ
+        const faqData = [
+            {
+                question: "Apa perbedaan antara Nahwu dan Sharaf?",
+                answer: "Nahwu adalah ilmu yang mempelajari struktur kalimat (i'rab), sedangkan Sharaf adalah ilmu yang mempelajari perubahan bentuk kata (tasrif), terutama kata kerja."
+            },
+            {
+                question: "Berapa lama waktu yang dibutuhkan untuk menguasai bahasa Arab?",
+                answer: "Waktu yang dibutuhkan bervariasi tergantung intensitas belajar. Dengan belajar konsisten 1-2 jam per hari, dalam 6-12 bulan Anda sudah dapat memahami teks dasar dan berkomunikasi sederhana."
+            },
+            {
+                question: "Apakah materi di website ini sesuai dengan kurikulum MA?",
+                answer: "Ya, semua materi disusun sesuai dengan kurikulum Bahasa Arab untuk jenjang Madrasah Aliyah (MA) yang berlaku di Indonesia."
+            },
+            {
+                question: "Bagaimana cara efektif belajar Mufradat (kosakata)?",
+                answer: "Gunakan metode spaced repetition (pengulangan berkala), buat flashcard, praktikkan dalam kalimat, dan kelompokkan kosakata berdasarkan tema untuk memudahkan mengingat."
+            },
+            {
+                question: "Apakah tersedia latihan soal?",
+                answer: "Ya, di bagian Download Anda dapat mengunduh kumpulan latihan soal dalam format PDF untuk menguji pemahaman Anda."
+            }
+        ];
+
+        // DOM Elements
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const searchInput = document.getElementById('searchInput');
+        const materiGrid = document.getElementById('materiGrid');
+        const faqContainer = document.getElementById('faqContainer');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        const materiModal = document.getElementById('materiModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+        const currentYearSpan = document.getElementById('currentYear');
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set tahun saat ini di footer
+            currentYearSpan.textContent = new Date().getFullYear();
+            
+            // Render materi cards
+            renderMateriCards(materiData);
+            
+            // Render FAQ
+            renderFAQ(faqData);
+            
+            // Setup event listeners
+            setupEventListeners();
+            
+            // Check for saved dark mode preference
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                enableDarkMode();
+            }
+        });
+
+        // Render materi cards
+        function renderMateriCards(materi) {
+            materiGrid.innerHTML = '';
+            
+            materi.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'materi-card';
+                card.dataset.id = item.id;
+                card.innerHTML = `
+                    <div class="card-icon">
+                        <i class="${item.icon}"></i>
+                    </div>
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                    <a href="#" class="card-button lihat-materi-btn" data-id="${item.id}">Lihat Materi</a>
+                `;
+                materiGrid.appendChild(card);
+            });
+            
+            // Add event listeners to "Lihat Materi" buttons
+            document.querySelectorAll('.lihat-materi-btn').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const id = parseInt(this.dataset.id);
+                    openMateriModal(id);
+                });
+            });
+        }
+
+        // Render FAQ
+        function renderFAQ(faqs) {
+            faqContainer.innerHTML = '';
+            
+            faqs.forEach((faq, index) => {
+                const faqItem = document.createElement('div');
+                faqItem.className = 'faq-item';
+                faqItem.innerHTML = `
+                    <div class="faq-question" data-index="${index}">
+                        <span>${faq.question}</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>${faq.answer}</p>
+                    </div>
+                `;
+                faqContainer.appendChild(faqItem);
+            });
+            
+            // Add event listeners to FAQ questions
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', function() {
+                    const index = this.dataset.index;
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    // Close all other FAQs
+                    document.querySelectorAll('.faq-answer').forEach(item => {
+                        if (item !== answer && item.classList.contains('active')) {
+                            item.classList.remove('active');
+                            item.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+                        }
+                    });
+                    
+                    // Toggle current FAQ
+                    answer.classList.toggle('active');
+                    
+                    // Rotate icon
+                    if (answer.classList.contains('active')) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+        }
+
+        // Open materi modal
+        function openMateriModal(id) {
+            const materi = materiData.find(item => item.id === id);
+            if (!materi) return;
+            
+            modalTitle.textContent = materi.title;
+            modalBody.innerHTML = materi.content;
+            materiModal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Dark mode toggle
+            darkModeToggle.addEventListener('click', toggleDarkMode);
+            
+            // Search functionality
+            searchInput.addEventListener('input', handleSearch);
+            
+            // Mobile menu toggle
+            mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+            
+            // Close modal
+            closeModal.addEventListener('click', closeMateriModal);
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                if (e.target === materiModal) {
+                    closeMateriModal();
+                }
+            });
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+        }
+
+        // Toggle dark mode
+        function toggleDarkMode() {
+            if (document.body.classList.contains('dark-mode')) {
+                disableDarkMode();
+            } else {
+                enableDarkMode();
+            }
+        }
+
+        function enableDarkMode() {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'enabled');
+        }
+
+        function disableDarkMode() {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'disabled');
+        }
+
+        // Handle search
+        function handleSearch() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            
+            if (searchTerm === '') {
+                renderMateriCards(materiData);
+                return;
+            }
+            
+            const filteredMateri = materiData.filter(item => 
+                item.title.toLowerCase().includes(searchTerm) || 
+                item.description.toLowerCase().includes(searchTerm)
+            );
+            
+            renderMateriCards(filteredMateri);
+        }
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            navLinks.classList.toggle('active');
+            
+            // Change menu icon
+            if (navLinks.classList.contains('active')) {
+                mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        }
+
+        // Close materi modal
+        function closeMateriModal() {
+            materiModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && materiModal.style.display === 'block') {
+                closeMateriModal();
+            }
+        });
+    </script>
+</body>
+</html>
